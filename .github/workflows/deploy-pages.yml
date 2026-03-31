@@ -36,6 +36,8 @@ jobs:
         run: npm ci
 
       - name: Build web app
+        env:
+          TLDRAW_LICENSE_KEY: ${{ secrets.TLDRAW_LICENSE_KEY }}
         run: npm run build:web
 
       - name: Upload Pages artifact
