@@ -19,9 +19,8 @@ export default defineConfig({
   define: {
     // Ensure process.env is available for any packages that reference it
     'process.env': {
-      // TLDRAW_LICENSE_KEY: process.env.TLDRAW_LICENSE_KEY ?? '',
-      // NEXT_PUBLIC_TLDRAW_LICENSE_KEY:
-      //   process.env.NEXT_PUBLIC_TLDRAW_LICENSE_KEY ?? ''
+      'process.env.TLDRAW_LICENSE_KEY': JSON.stringify(''),
+      'process.env.NEXT_PUBLIC_TLDRAW_LICENSE_KEY': JSON.stringify('')
     }
   },
   build: {
