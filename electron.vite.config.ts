@@ -48,8 +48,8 @@ export default defineConfig({
               '@revesuite/lit',
               '@revesuite/store'
             ],
-            revemate: ['revemate'],
-            tldraw: ['@tldraw/tldraw']
+            excalidraw: ['@excalidraw/excalidraw'],
+            tldraw: ['tldraw']
           }
         }
       }
