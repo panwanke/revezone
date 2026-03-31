@@ -18,7 +18,11 @@ export default defineConfig({
   plugins: [react()],
   define: {
     // Ensure process.env is available for any packages that reference it
-    'process.env': {}
+    'process.env': {
+      // TLDRAW_LICENSE_KEY: process.env.TLDRAW_LICENSE_KEY ?? '',
+      // NEXT_PUBLIC_TLDRAW_LICENSE_KEY:
+      //   process.env.NEXT_PUBLIC_TLDRAW_LICENSE_KEY ?? ''
+    }
   },
   build: {
     outDir: resolve('dist-web'),
