@@ -3,11 +3,7 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
 // Web-only build config for GitHub Pages deployment.
-// This builds only the renderer (React app) without Electron.
-// window.api calls use optional chaining (?.) throughout the codebase
-// so they gracefully no-op in the browser environment.
 export default defineConfig({
-  // Set base to match your GitHub Pages URL: https://<user>.github.io/<repo>/
   base: '/revezone/',
   root: 'src/renderer',
   resolve: {
@@ -17,11 +13,9 @@ export default defineConfig({
   },
   plugins: [react()],
   define: {
-    // Ensure process.env is available for any packages that reference it
-    'process.env': {
-      'process.env.TLDRAW_LICENSE_KEY': JSON.stringify(''),
-      'process.env.NEXT_PUBLIC_TLDRAW_LICENSE_KEY': JSON.stringify('')
-    }
+    'process.env.TLDRAW_LICENSE_KEY': JSON.stringify(''),
+    'process.env.NEXT_PUBLIC_TLDRAW_LICENSE_KEY': JSON.stringify(''),
+    'process.env': JSON.stringify({})
   },
   build: {
     outDir: resolve('dist-web'),
